@@ -1,0 +1,54 @@
+
+.brand-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.brand-item{
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: lighter;
+    min-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+}
+
+.join-us, .jordan, .hurley, .converse{
+    min-width: 80px;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-color: rgb(229, 229, 229);
+    color: rgb(117, 117, 117);
+}
+
+.empty, .join, .help, .cart, .country{
+    min-width: min-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 1px solid;
+    border-color: rgb(229, 229, 229);
+    color: rgb(117, 117, 117);
+}
+
+.empty{
+    flex: 1;
+}
+
+.join-us:hover, .hurley:hover, .converse:hover, .cart:hover, .country:hover{
+    color: black;
+}
+
+.jordan:hover{
+    color: red;
+}
+
+.join:hover, .help:hover{
+    border-bottom: 2px solid black;
+}
+
