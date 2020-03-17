@@ -1,44 +1,47 @@
 import React from 'react';
+import newReleases from '../../dist/assets/newReleases.png';
+import men from '../../dist/assets/men.png';
+import women from '../../dist/assets/women.png';
+import kids from '../../dist/assets/kids.png';
+import customize from '../../dist/assets/customize.png';
+import logo from '../../dist/assets/logo.png';
+import converse from '../../dist/assets/converse.png';
+import jordan from '../../dist/assets/jordan.png';
+import hurley from '../../dist/assets/hurley.png';
+import cart from '../../dist/assets/cart.png';
+import pin from '../../dist/assets/pin.png';
 
 function Navigation(props){
 
     return(
-        // <ul className="brand-nav">
-        //     <span className="left-nav">
-        //         <li className="join-us">Join Us</li>
-        //         <li className="jordan"><img src="https://img.icons8.com/ios/50/000000/air-jordan.png"/></li>
-        //         <li className="hurley"><img src="https://i.ibb.co/0q353xs/Screen-Shot-2020-03-13-at-4-21-13-PM.png"></img></li>
-        //         <li className="converse"><img src="https://i.ibb.co/1rfsRJj/Screen-Shot-2020-03-13-at-4-24-28-PM.png"></img></li>
-        //     </span>
-        //     <span className="right-nav">    
-        //         <li className="right-nav-list">
-        //         <span id="join">Join/Log In To Nike Member Profile</span>
-        //         <span id="help">Help</span>
-        //         <span id="cart"><img src="https://i.ibb.co/KFH8Z0T/Screen-Shot-2020-03-13-at-4-04-24-PM.png"></img></span>
-        //         <span id="country"><img src="https://i.ibb.co/ZGZGx5H/Screen-Shot-2020-03-13-at-4-08-42-PM.png"></img>United States</span>
-        //         </li>
-        //     </span>
-        // </ul>
-        <div>
+        <div className='nav-container'>
             <div className='brand-container'>
                 <div className='brand-item join-us'>Join Us</div>
-                <div className='brand-item jordan'>Jordan</div>
-                <div className='brand-item hurley'>Hurley</div>
-                <div className='brand-item converse'>Converse</div>
+                <div className='brand-item jordan'><img height="15px" className='logo-imgs' id='jordan-logo' src={jordan}></img></div>
+                <div className='brand-item hurley'><img height="10px" className='logo-imgs' src={hurley}></img></div>
+                <div className='brand-item converse'><img height="10px" className='logo-imgs' src={converse}></img></div>
                 <div className='brand-item empty'></div>
                 <div className='brand-item join'>Join/Log In To Nike Member Profile</div>
                 <div className='brand-item help'>Help</div>
-                <div className='brand-item cart'>Cart</div>
-                <div className='brand-item country'>United States</div>
+                <div className='brand-item cart'><img height="15px" className='logo-imgs' src={cart}></img></div>
+                <div className='brand-item country'><img height="15px" className='logo-imgs' src={pin}></img> United States</div>
             </div>
 
             <div className='site-nav-container'>
-                <div className='site-nav-item logo'>Nike</div>
-                <div className='site-nav-item logo'>NEW RELEASES</div>
-                <div className='site-nav-item logo'>MEN</div>
-                <div className='site-nav-item logo'>WOMEN</div>
-                <div className='site-nav-item logo'>KIDS</div>
-                <div className='site-nav-item logo'>CUSTOMIZE</div>
+                <div className='logo'><img id='logo' src={logo}></img></div>
+                <div className='empty-site-nav'></div>
+                <div className='site-nav-item logo'><img className ='s-n-img' src={newReleases}></img></div>
+                <div className='site-nav-item logo'><img className ='s-n-img' src={men}></img></div>
+                <div className='site-nav-item logo'><img className ='s-n-img' src={women}></img></div>
+                <div className='site-nav-item logo'><img className ='s-n-img' src={kids}></img></div>
+                <div className='site-nav-item logo'><img className ='s-n-img' src={customize}></img></div>
+                <div className ='empty-site-nav'></div>
+                <input type="text" className='search-bar' placeholder="Search"></input>
+            </div>
+
+            <div className='announcement-banner'>
+                <div className='statement'>Nike statement on COVID-19.</div>
+                <u>VIEW HERE</u>
             </div>
         </div>
     )

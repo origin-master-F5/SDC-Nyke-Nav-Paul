@@ -1,12 +1,19 @@
+.nav-container{
+    display: flex;
+    flex-direction: column;
+}
 
 .brand-container{
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     display: flex;
     align-items: center;
     background-color: rgb(255, 255, 255);
+    margin: -10px -10px 0 -10px;
+    border-bottom: 1px solid;
+    border-color: rgb(229, 229, 229);
+    color: rgb(117, 117, 117);
 }
 
 .brand-item{
@@ -17,23 +24,28 @@
     text-align: center;
     vertical-align: middle;
     line-height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.logo-imgs{
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgb(117, 117, 117); 
+}
+
+.logo-imgs:hover{
+    background-color: black;
 }
 
 .join-us, .jordan, .hurley, .converse{
-    min-width: 80px;
+    min-width: fit-content;
     border-right: 1px solid;
-    border-bottom: 1px solid;
     border-color: rgb(229, 229, 229);
-    color: rgb(117, 117, 117);
 }
 
 .empty, .join, .help, .cart, .country{
-    min-width: min-content;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-bottom: 1px solid;
-    border-color: rgb(229, 229, 229);
-    color: rgb(117, 117, 117);
+    min-width: fit-content;
 }
 
 .empty{
@@ -44,11 +56,103 @@
     color: black;
 }
 
-.jordan:hover{
-    color: red;
+#jordan-logo:hover{
+    background-color: darkred;
 }
 
 .join:hover, .help:hover{
     border-bottom: 2px solid black;
+    margin-bottom: -2px;
 }
+
+.site-nav-container{
+    margin: 5px -10px 0 -10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    height: 70px;
+    border-bottom: 1px solid;
+    border-color: rgb(229, 229, 229);
+}
+
+.site-nav-item{
+    object-fit: contain;
+    text-align: center;
+    line-height: 70px;
+    z-index: 10;
+}
+
+.s-n-img{
+    padding-right: 20px;
+    padding-left: 20px;
+    height: 15px;
+}
+
+.site-nav-item:hover{
+    border-bottom: 2px solid black;
+    margin-bottom: -2px;
+}
+
+#logo{
+    padding-left: 20px;
+    height: 30px;
+    text-align: center;
+    line-height: 70px;
+    object-fit: contain;
+    padding-right: 100px;
+}
+
+.empty-site-nav{
+    flex: 1;
+}
+
+.search-bar{
+    width: 200px;
+    height: 40px;
+    margin-right: 20px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: rgb(229, 229, 229);
+    background: url(./assets/magnifyingGlass.png) no-repeat;
+    padding-left: 35px;
+    background-size: 35px 35px;
+    background-position: left center;
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: lighter;
+    /* position: absolute; */
+    align-self: center;
+}
+
+.search-bar:focus{
+    border-color: black;
+    border-radius: 4px;
+    border: 1px solid;
+    width: 250px;
+    outline-width: 0;
+}
+
+.announcement-banner{
+    height: 45px;
+    font-family: Helvetica, sans-serif;
+    background-color: rgb(245, 245, 245);
+    border-bottom: 1px solid;
+    border-color: rgb(229, 229, 229);
+    text-align: center;
+    font-size: 12px;
+    padding-top: 8px;
+}
+
+.statement{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+
+
 
