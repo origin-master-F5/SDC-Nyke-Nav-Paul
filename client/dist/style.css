@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
 .nav-container{
     display: flex;
     flex-direction: column;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
 }
 
 .brand-container{
@@ -14,6 +19,7 @@
     border-bottom: 1px solid;
     border-color: rgb(229, 229, 229);
     color: rgb(117, 117, 117);
+    padding-right: 20px;
 }
 
 .brand-item{
@@ -26,6 +32,7 @@
     line-height: 40px;
     padding-left: 20px;
     padding-right: 20px;
+    z-index: 20;
 }
 
 .logo-imgs{
@@ -49,7 +56,8 @@
 }
 
 .empty{
-    flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
 }
 
 .join-us:hover, .hurley:hover, .converse:hover, .cart:hover, .country:hover{
@@ -62,7 +70,8 @@
 
 .join:hover, .help:hover{
     border-bottom: 2px solid black;
-    margin-bottom: -2px;
+    margin-bottom: -1px;
+    z-index: 20;
 }
 
 .site-nav-container{
@@ -75,13 +84,14 @@
     height: 70px;
     border-bottom: 1px solid;
     border-color: rgb(229, 229, 229);
+    padding-right: 20px;
 }
 
 .site-nav-item{
     object-fit: contain;
     text-align: center;
     line-height: 70px;
-    z-index: 10;
+    z-index: 5;
 }
 
 .s-n-img{
@@ -92,7 +102,7 @@
 
 .site-nav-item:hover{
     border-bottom: 2px solid black;
-    margin-bottom: -2px;
+    margin-bottom: 0px;
 }
 
 #logo{
@@ -101,7 +111,7 @@
     text-align: center;
     line-height: 70px;
     object-fit: contain;
-    padding-right: 100px;
+    padding-right: 200px;
 }
 
 .empty-site-nav{
@@ -125,7 +135,6 @@
     font-family: Helvetica, sans-serif;
     font-size: 14px;
     font-weight: lighter;
-    /* position: absolute; */
     align-self: center;
 }
 
@@ -137,7 +146,14 @@
     outline-width: 0;
 }
 
+.search-wrapper{
+    width: 320px;
+    text-align: right;
+    padding: 0px;
+}
+
 .announcement-banner{
+    position: relative;
     height: 45px;
     font-family: Helvetica, sans-serif;
     background-color: rgb(245, 245, 245);
@@ -146,12 +162,337 @@
     text-align: center;
     font-size: 12px;
     padding-top: 8px;
+    top: 105px;
+    margin-left: -10px;
+    margin-right: -10px;
 }
 
 .statement{
     font-size: 14px;
     margin-bottom: 10px;
 }
+
+#join-modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -275px;
+    margin-left: -210px;
+    width: 420px;
+    height: 520px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+    animation: slide-up 0.4s ease;
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 1;
+        transform: translateY(1000px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(1000px);
+    }
+}
+
+.login-asset{
+    padding: 3px;
+}
+
+.input-text{
+    padding-left: 10px;
+}
+
+.input-form{
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    color: rgb(178, 178, 178); 
+    font-weight: lighter;
+    width: 305px;
+    height: 35px;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    outline-width: 0;
+    border-color: rgb(229, 229, 229);
+    border: 1px solid;
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+    width: 10px;
+    height: 10px;
+    border: 1px solid rgb(229, 229, 229);
+    margin-bottom: 10px;
+}
+
+.checkbox-container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.check-box{
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    color: rgb(178, 178, 178); 
+    font-weight: lighter;
+    margin-right: 10px;
+}
+
+#forgot{
+    padding-left: 80px;
+}
+
+#terms{
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    color: rgb(178, 178, 178); 
+    font-weight: lighter;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 30px;
+}
+
+#join-member{
+    margin-top: 20px;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    color: rgb(178, 178, 178); 
+    font-weight: lighter;
+}
+
+.exit{
+    position: fixed;
+    margin-left: 180px;
+}
+
+#help-dropdown{
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    background-color: rgb(255, 255, 255);
+    padding-top: 10px;
+    padding-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 1px solid rgb(229, 229, 229);
+    border-right: 1px solid rgb(229, 229, 229);
+    border-left: 1px solid rgb(229, 229, 229);
+    top: 40px;
+    text-align: left;
+    right: 130px;
+}
+
+.help-button{
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    color: black; 
+    font-weight: lighter;
+    margin-bottom: -15px;
+}
+
+.help-button:hover{
+    color: rgb(178, 178, 178); 
+}
+
+.help-list{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+#overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    margin: -10px -10px 0 -10px;
+    z-index: 25;
+}
+
+.location-modal{
+    position: absolute;
+    z-index: 30;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    animation: slide-up 0.5s;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    color: black; 
+    padding-top: 20px;
+}
+
+h1{
+    font-family: Helvetica, sans-serif;
+    color: black;
+    text-align: center;
+    font-size: 35px;
+}
+
+.country-title{
+    font-family: Helvetica, sans-serif;
+    font-weight: lighter;
+    color: black;
+    font-size: 25px;
+    padding-left: 300px;
+    padding-right: 300px;
+    text-align: left;
+}
+
+.country-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 300px;
+    padding-right: 100px;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.pair{
+    padding-right: 20px;
+    padding-bottom: 30px;
+}
+
+.country-name{
+    font-family: Helvetica, sans-serif;
+    font-weight: bolder;
+    color: black;
+    font-size: 20px;
+}
+
+.country-language{
+    font-family: Helvetica, sans-serif;
+    font-weight: lighter;
+    font-size: 12px;
+    color: rgb(137, 137, 137);
+}
+
+.pin-img{
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgb(224, 224, 224); 
+    position: relative;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.pin-img:hover{
+    background-color: rgb(117, 117, 117);
+}
+
+.country-text{
+    display: inline-block;
+    height: 50px;
+    width: 150px
+}
+
+.exit-locations{
+    position: fixed;
+    right: 50px;
+    animation: slide-down 0.4s ease;
+}
+
+.flyout{
+    width: 100%;
+    background-color:rgb(255, 255, 255);
+    z-index: 15;
+    position: fixed;
+    right: 0;
+    margin-top: 1px;
+    border-bottom: 1px solid rgb(229, 229, 229);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: auto;
+    height: max-content;
+}
+
+.m-w-k{
+    height: 500px;
+}
+
+.left-wing, .center-wing, .right-wing{
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-top: 20px;
+}
+
+.bold-title{
+    font-family: "Oswald", sans-serif;
+    font-size: 16px;
+    font-weight: bolder;
+    padding: 0;
+    margin-top: -30px;
+    margin-bottom: 10px;
+}
+
+.left-wing-title, .center-wing-title, .right-wing-title{
+    padding: 0;
+    margin-top: -45px;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.left-wing-title:hover, .center-wing-title:hover, .right-wing-title:hover, .bold-title:hover{
+    color: rgb(117, 117, 117);
+}
+
+.left-wing{
+    padding-right: 40px;
+    border-right: 1px solid rgb(229, 229, 229);
+}
+
+.right-wing{
+    padding-left: 40px;
+    border-left: 1px solid rgb(229, 229, 229);
+}
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    background-color: black;
+}
+
+
+
+
 
 
 

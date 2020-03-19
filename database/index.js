@@ -11,7 +11,8 @@ var shoeSchema = mongoose.Schema({
     item: String,
     type: String,
     price: String,
-    image: String
+    image: String,
+    collections: [String]
 });
 
 var Shoe = mongoose.model('Shoes', shoeSchema);
