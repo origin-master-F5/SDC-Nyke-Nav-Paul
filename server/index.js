@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 const router = express.Router();
-const { find } =require('../database/dbhelpers');
+const { find, count } =require('../database/dbhelpers');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -22,16 +22,19 @@ app.listen(PORT, (err) => {
     }
 })
 
-router.get('/search', (req, res) => {
-    find(req.body)
+router.get(`/search/:keyword`, (req, res) => {
+    console.log('Searching!-->', req.params);
+    find(req.params)
     .then((result) => {
-        console.log('result--->', result);
+        console.log('Successful!');
         res.status(200).send(result);
     })
     .catch((err) => {
         res.status(400).send(err);
     })
 }) 
+
+
 
 
 

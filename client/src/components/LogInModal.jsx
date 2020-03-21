@@ -17,10 +17,14 @@ export default class LogInModal extends React.Component{
     handleExit(){
         this.props.handleClick('');
         console.log('Exited!');
+        document.body.style.overflow='unset';
     }
 
     render(){
         if(this.props.display === 'join'){
+            document.body.style.overflow='hidden';
+            console.log('props--->', this.props.display);
+            console.log('document-->', document.body);
             return(
                 <div id="join-modal">
                     <div className='exit'><img height='15px' src={exit} onClick={this.handleExit}></img></div>

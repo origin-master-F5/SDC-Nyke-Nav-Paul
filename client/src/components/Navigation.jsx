@@ -20,6 +20,8 @@ import Womens from './Womens.jsx';
 import Kids from './Kids.jsx';
 import Customize from './Customize.jsx';
 import Search from './Search.jsx';
+import SearchModal from './SearchModal.jsx';
+import Footer from './Footer.jsx';
 
 class Navigation extends React.Component{
 
@@ -27,36 +29,46 @@ class Navigation extends React.Component{
         super(props);
         this.state = {
             modal: '',
-            overlay: false
+            keyword: ''
         }
         this.handleChange = this.handleChange.bind(this);
+        this.setKeyword = this.setKeyword.bind(this);
     }
 
     handleChange(option){
         if(option === ''){
+            document.body.style.overflow='unset';
             this.setState({
                 modal: '',
-                overlay: false
             })
+        }
+        else if(option === 'search'){
+            this.setState({
+                modal: 'search',
+            });
         }
         else if(option === 'join'){
             this.setState({
                 modal: 'join',
-                overlay: true
             });
         }
         else{
             this.setState({
                 modal: option,
-                overlay: false
             })
         }
     }
 
+    setKeyword(keyword){
+        this.setState({
+            keyword: keyword
+        })
+    }
+
     render(){
         return(
-            <div>
-                <Overlay display={this.state.overlay} handleClick={this.handleChange}/>
+            <div id='app-container'>
+                <Overlay keyword={this.state.keyword} display={this.state.modal} handleClick={this.handleChange}/>
                 <LogInModal display={this.state.modal} handleClick={this.handleChange} />
                 <Locations display={this.state.modal} handleClick={this.handleChange} />
                 <div className='nav-container'>
@@ -96,8 +108,8 @@ class Navigation extends React.Component{
                         </div>
                         <div className ='empty-site-nav'></div>
                         <div className='search-wrapper'>
-                            <input type="text" className='search-bar' placeholder="Search"></input>
-                            <Search display={this.state.modal} />
+                            <Search display={this.state.modal} handleChange={this.handleChange} setKeyword={this.setKeyword}/>
+                            <SearchModal keyword={this.state.keyword} display={this.state.modal} handleChange={this.handleChange}/>
                         </div>
                     </div>
                 </div>
@@ -105,6 +117,8 @@ class Navigation extends React.Component{
                     <div className='statement'>Nike statement on COVID-19.</div>
                     <u>VIEW HERE</u>
                 </div>
+                <div id='filler'></div>
+                <footer id='footer'><Footer display={this.state.modal} handleChange={this.handleChange}/></footer>
             </div>
         )
     }
