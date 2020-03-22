@@ -22,6 +22,7 @@ import Customize from './Customize.jsx';
 import Search from './Search.jsx';
 import SearchModal from './SearchModal.jsx';
 import Footer from './Footer.jsx';
+import Feedback from './Feedback.jsx';
 
 class Navigation extends React.Component{
 
@@ -71,6 +72,7 @@ class Navigation extends React.Component{
                 <Overlay keyword={this.state.keyword} display={this.state.modal} handleClick={this.handleChange}/>
                 <LogInModal display={this.state.modal} handleClick={this.handleChange} />
                 <Locations display={this.state.modal} handleClick={this.handleChange} />
+                <Feedback display={this.state.modal} handleClick={this.handleClick} />
                 <div className='nav-container'>
                     <div className='brand-container'>
                         <div className='brand-item join-us'>Join Us</div>
