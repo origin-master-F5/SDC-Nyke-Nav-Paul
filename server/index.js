@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use('/', router);
 
-const PORT = 3000;
+const PORT = 3001;
 
 app.listen(PORT, (err) => {
     if(err){
