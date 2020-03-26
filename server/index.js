@@ -34,6 +34,20 @@ router.get(`/search/:keyword`, (req, res) => {
     })
 }) 
 
+router.get(`/count/:keyword`, (req, res) => {
+    console.log('counting!');
+
+    count(req.params)
+    .then((result) => {
+        console.log('Successful!');
+        res.status(200).send(result);
+    })
+    .catch((err) => {
+        res.status(400).send(err);
+    })
+
+})
+
 
 
 

@@ -72,7 +72,7 @@ class Navigation extends React.Component{
                 <Overlay keyword={this.state.keyword} display={this.state.modal} handleClick={this.handleChange}/>
                 <LogInModal display={this.state.modal} handleClick={this.handleChange} />
                 <Locations display={this.state.modal} handleClick={this.handleChange} />
-                <Feedback display={this.state.modal} handleClick={this.handleClick} />
+                <Feedback display={this.state.modal} handleClick={this.handleChange} />
                 <div className='nav-container'>
                     <div className='brand-container'>
                         <div className='brand-item join-us'>Join Us</div>

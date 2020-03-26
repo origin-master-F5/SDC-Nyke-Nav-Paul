@@ -16,7 +16,6 @@ export default class LogInModal extends React.Component{
 
     handleExit(){
         this.props.handleClick('');
-        console.log('Exited!');
         document.body.style.overflow='unset';
     }
 

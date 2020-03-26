@@ -13,7 +13,7 @@ class App extends React.Component{
 
     render(){
         return(
-            <div id='app'>
+            <div id='app-body'>
                 <div id='nav'><Navigation /></div>
             </div>
         )

@@ -3,7 +3,6 @@ import React from 'react';
 export default function Overlay({display,keyword, handleClick}){
     var handleExit = () => {
         handleClick('');
-        console.log('Exited!');
     };
 
     if(display === 'join' || display === 'feedback'){
