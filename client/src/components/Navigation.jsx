@@ -23,6 +23,9 @@ import Search from './Search.jsx';
 import SearchModal from './SearchModal.jsx';
 import Footer from './Footer.jsx';
 import Feedback from './Feedback.jsx';
+import Header from './Header.jsx';
+import ReactDOM from 'react-dom';
+
 
 class Navigation extends React.Component{
 
@@ -73,58 +76,19 @@ class Navigation extends React.Component{
                 <LogInModal display={this.state.modal} handleClick={this.handleChange} />
                 <Locations display={this.state.modal} handleClick={this.handleChange} />
                 <Feedback display={this.state.modal} handleClick={this.handleChange} />
-                <div className='nav-container'>
-                    <div className='brand-container'>
-                        <div className='brand-item join-us'>Join Us</div>
-                        <div className='brand-item jordan'><img height="15px" className='logo-imgs' id='jordan-logo' src={jordan}></img></div>
-                        <div className='brand-item hurley'><img height="10px" className='logo-imgs' src={hurley}></img></div>
-                        <div className='brand-item converse'><img height="10px" className='logo-imgs' src={converse}></img></div>
-                        <div className='brand-item empty'></div>
-                        <div className='brand-item join' onClick={() => this.handleChange('join')}>Join/Log In To Nike Member Profile</div>
-                        <ul className='help-list' onMouseEnter={() => this.handleChange('help')} onMouseLeave={() => this.handleChange('')}>
-                            <div className='brand-item help'>Help
-                                <Help display={this.state.modal} />
-                            </div>
-                        </ul>
-                        <div className='brand-item cart'><img height="15px" className='logo-imgs' src={cart}></img></div>
-                        <div className='brand-item country' onClick={() => this.handleChange('locations')}><img height="15px" className='logo-imgs' src={pin}></img> United States</div>
-                    </div>
-
-                    <div className='site-nav-container'>
-                        <div className='logo'><img id='logo' src={logo}></img></div>
-                        <div className='empty-site-nav'></div>
-                        <div className='site-nav-item logo' onMouseEnter={() => this.handleChange('new')} onMouseLeave={() => this.handleChange('')}><img className ='s-n-img' src={newReleases}></img>
-                            <NewReleases display={this.state.modal} />
-                        </div>
-                        <div className='site-nav-item logo' onMouseEnter={() => this.handleChange('men')} onMouseLeave={() => this.handleChange('')}><img className ='s-n-img' src={men}></img>
-                            <Mens display={this.state.modal} />
-                        </div>
-                        <div className='site-nav-item logo' onMouseEnter={() => this.handleChange('women')} onMouseLeave={() => this.handleChange('')}><img className ='s-n-img' src={women}></img>
-                            <Womens display={this.state.modal} />
-                        </div>
-                        <div className='site-nav-item logo' onMouseEnter={() => this.handleChange('kids')} onMouseLeave={() => this.handleChange('')}><img className ='s-n-img' src={kids}></img>
-                            <Kids display={this.state.modal} />
-                        </div>
-                        <div className='site-nav-item logo' onMouseEnter={() => this.handleChange('customize')} onMouseLeave={() => this.handleChange('')}><img className ='s-n-img' src={customize}></img>
-                            <Customize display={this.state.modal} />
-                        </div>
-                        <div className ='empty-site-nav'></div>
-                        <div className='search-wrapper'>
-                            <Search display={this.state.modal} handleChange={this.handleChange} setKeyword={this.setKeyword}/>
-                            <SearchModal keyword={this.state.keyword} display={this.state.modal} handleChange={this.handleChange}/>
-                        </div>
-                    </div>
+                <div id='header'>
+                    <Header display={this.state.modal} handleChange={this.handleChange} keyword={this.state.keyword} setKeyword={this.setKeyword}/>
                 </div>
-                <div className='announcement-banner'>
-                    <div className='statement'>Nike statement on COVID-19.</div>
-                    <u>VIEW HERE</u>
-                </div>
-                <div id='filler'></div>
-                <footer id='footer'><Footer display={this.state.modal} handleChange={this.handleChange}/></footer>
+                {/* <div id='filler'></div> */}
+                <div id='footer'><Footer display={this.state.modal} handleChange={this.handleChange}/></div>
             </div>
         )
     }
 }
 
+ReactDOM.render(<Navigation />, document.getElementById('Header'));
+
 export default Navigation;
+
+
 

@@ -7,6 +7,7 @@
 }
 
 .app-container{
+    display: block;
     height: 100%;
     width: 100%;
 }
@@ -89,7 +90,7 @@
 
 .site-nav-container{
     position: fixed;
-    margin: 0px -10px 0 -10px;
+    margin: 0px 0px 0 0px;
     top:40px;
     left: 0;
     right: 0;
@@ -106,7 +107,7 @@
 .site-nav-item{
     object-fit: contain;
     text-align: center;
-    line-height: 70px;
+    line-height: 65px;
     z-index: 5;
 }
 
@@ -170,17 +171,19 @@
 
 .announcement-banner{
     position: relative;
-    height: 45px;
+    height: max-content;
     font-family: Helvetica, sans-serif;
     background-color: rgb(245, 245, 245);
     border-bottom: 1px solid;
     border-color: rgb(229, 229, 229);
     text-align: center;
     font-size: 12px;
-    padding-top: 8px;
-    top: 105px;
+    padding-top: 18px;
+    padding-bottom: 10px;
+    top: 100px;
     margin-left: -10px;
     margin-right: -10px;
+    margin-bottom: 120px;
 }
 
 .statement{
@@ -359,7 +362,6 @@ input[type=checkbox] {
     z-index: 40;
     margin-left: -10px;
     width: 100%;
-    height: max-content;
     background-color: rgb(255, 255, 255);
     animation: slide-up 0.5s;
     font-family: Helvetica, sans-serif;
@@ -405,6 +407,7 @@ h1{
 
 .pair{
     padding-right: 20px;
+    padding-top: 30px;
     padding-bottom: 30px;
 }
 
@@ -468,7 +471,7 @@ h1{
 
 .left-wing, .center-wing, .right-wing{
     text-align: left;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 50px;
     margin-left: 40px;
     margin-right: 40px;
@@ -619,13 +622,16 @@ h1{
     display: none;
 }
 
-footer{
-    position: relative;
-    left: 0;
-    bottom: 0;
+#footer{
+    position: absolute;
+    /* left: 0;
+    bottom: 0; */
     height: 400px;
+    width: 100%;
     background-color: rgb(17, 17, 17);
-    margin: -8px;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding: 20px;
 }
 
 .footer-wrapper{
@@ -790,7 +796,7 @@ ul{
     top: 30%;
     left: 50%;
     width: 550px;
-    height: 300px;
+    height: max-content;
     margin-left: -300px;
     margin-top: -300px;
     background-color: rgb(255, 255, 255);
@@ -801,8 +807,6 @@ ul{
     flex-direction: column;
     padding-top: 20px;
     border-radius: 5px;
-    display: flex;
-    flex-direction: column;
     align-items: flex-start;
     padding-left: 50px;
     padding-right: 50px;
@@ -814,7 +818,7 @@ ul{
 }
 
 .feedback-exit{
-    margin-left: 550px;
+    margin-left: 95%;
 }
 
 .feedback-logo{

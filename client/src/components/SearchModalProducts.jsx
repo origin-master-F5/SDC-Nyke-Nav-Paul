@@ -8,11 +8,15 @@ export default class SearchModalProducts extends React.Component{
         }
     }
 
+    handleSelect(product){
+        history.pushState('', '', `/${product.id}`);
+    }
+
     render(){
         return(
             <div className='product-container'>
                 {this.props.products.map((product) => (
-                    <div className='product'>
+                    <div className='product' onClick={(e) => this.handleSelect(product)}>
                         <img height='120px' src={product.image} className='product-photo'></img>
                         <div className='product-text'>
                             <div className='product-name'>{product.item}</div>
