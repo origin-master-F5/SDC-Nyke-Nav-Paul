@@ -9,7 +9,7 @@ export default class SearchModalProducts extends React.Component{
     }
 
     handleSelect(product){
-        history.pushState('', '', `/${product.id}`);
+        window.location.hash = product.id;
     }
 
     render(){
