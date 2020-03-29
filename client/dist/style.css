@@ -856,7 +856,7 @@ ul.guide-list, ul.help-list, ul.footer-text-list{
     width: 100%;
 }
 
-select, textarea{
+select, .feedback-textarea{
     width: 100%;
     background-color: rgb(247, 247, 247);
 }
