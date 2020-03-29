@@ -57,6 +57,7 @@
 
 .logo-imgs:hover{
     background-color: black;
+    cursor: pointer;
 }
 
 .join-us, .jordan, .hurley, .converse{
@@ -76,16 +77,19 @@
 
 .join-us:hover, .hurley:hover, .converse:hover, .cart:hover, .country:hover{
     color: black;
+    cursor: pointer;
 }
 
 #jordan-logo:hover{
     background-color: darkred;
+    cursor: pointer;
 }
 
 .join:hover, .help:hover{
     border-bottom: 2px solid black;
     margin-bottom: -1px;
     z-index: 20;
+    cursor: pointer;
 }
 
 .site-nav-container{
@@ -120,6 +124,7 @@
 .site-nav-item:hover{
     border-bottom: 2px solid black;
     margin-bottom: 0px;
+    cursor: pointer;
 }
 
 #logo{
@@ -161,6 +166,7 @@
     border: 1px solid;
     width: 250px;
     outline-width: 0;
+    cursor: pointer;
 }
 
 .search-wrapper{
@@ -496,6 +502,7 @@ h1{
 
 .left-wing-title:hover, .center-wing-title:hover, .right-wing-title:hover, .bold-title:hover{
     color: rgb(117, 117, 117);
+    cursor: pointer;
 }
 
 .left-wing{
@@ -738,6 +745,7 @@ h1{
 
 .footer-body:hover, .sf-list-item:hover{
     color: white;
+    cursor: pointer;
 }
 
 .footer-column{
@@ -751,6 +759,7 @@ h1{
 
 .footer-social-icon:hover{
     background-color:white;
+    cursor: pointer;
 }
 
 #filler{
@@ -764,6 +773,7 @@ ul.guide-list, ul.help-list, ul.footer-text-list{
 
 .footer-guide:hover{
     border-top: 3px solid white;
+    cursor: pointer;
 }
 
 .guide-list{
@@ -793,6 +803,7 @@ ul.guide-list, ul.help-list, ul.footer-text-list{
 
 .guide-item:hover{
     color: white;
+    cursor: pointer;
 }
 
 #feedback-modal{
