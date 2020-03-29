@@ -754,7 +754,7 @@ h1{
     height: 1000px;
 }
 
-ul{
+ul.guide-list, ul.help-list, ul.footer-text-list{
     list-style: none;
 }
 
@@ -766,7 +766,7 @@ ul{
     padding: 30px;
     position: absolute;
     width: 600px;
-    height: 120px;
+    height: 150px;
     background-color: black;
     border: 1px solid white;
     color: rgb(104, 104, 104);
@@ -783,7 +783,7 @@ ul{
 
 .guide-item{
     margin-bottom: 5px;
-    padding-right: 80px;
+    padding-right: 10px;
     text-align: left;
 }
 
@@ -887,7 +887,7 @@ input[type=button]{
     display: flex;
 }
 
-label{
+.radio-rating-num{
     display: inline-block;
     margin: 0 3px;
     position: relative;
@@ -928,7 +928,6 @@ label{
     font-size: 18px;
     color: black
 }
-
 
 @keyframes slide-up {
     0% {

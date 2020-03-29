@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import facebook from '../../dist/assets/facebooklogo.png';
 import youtube from '../../dist/assets/youtube.png';
 import twitter from '../../dist/assets/twitter.png';
@@ -30,7 +31,7 @@ export default class Footer extends React.Component{
                 <div id='footer-accordian'>
                     <div className='footer-text'>
                         <div className='footer-column'>
-                            <ul>
+                            <ul className='footer-text-list'>
                                 <li className='footer-header'>GIFT CARDS</li>
                                 <li className='footer-header'>PROMOTIONS</li>
                                 <li className='footer-header'>FIND A STORE</li>
@@ -40,7 +41,7 @@ export default class Footer extends React.Component{
                             </ul>
                         </div>
                         <div className='footer-column'>
-                            <ul>
+                            <ul className='footer-text-list'>
                                 <li className='footer-header'>GET HELP</li>
                                 <li className='footer-body'>Order Status</li>
                                 <li className='footer-body'>Shipping and Delivery</li>
@@ -51,7 +52,7 @@ export default class Footer extends React.Component{
                             </ul>
                         </div>
                         <div className='footer-column'>
-                            <ul>
+                            <ul className='footer-text-list'>
                                 <li className='footer-header'>ABOUT NIKE</li>
                                 <li className='footer-body'>News</li>
                                 <li className='footer-body'>Careers</li>

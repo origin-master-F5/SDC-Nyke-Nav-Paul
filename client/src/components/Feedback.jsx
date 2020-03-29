@@ -180,20 +180,20 @@ function ExperienceSubmission(props){
         <div className='feedback-text'>HOW EASY WAS IT TO ACCOMPLISH THAT GOAL?</div>
         <table>
             <tr className='radio-rating-container'>
-                <label> 1<br></br> 
+                <label className='radio-rating-num'> 1<br></br> 
                     <input type="radio" name="rating" value='1'></input>
                     <div className='radio-label'>Very Difficult</div>
                 </label>
-                <label> 2<br></br> 
+                <label className='radio-rating-num'> 2<br></br> 
                     <input type="radio" name="rating" value='2'></input>
                 </label>
-                <label>3<br></br> 
+                <label className='radio-rating-num'>3<br></br> 
                     <input type="radio" name="rating" value='3'></input>
                 </label>
-                <label>4<br></br> 
+                <label className='radio-rating-num'>>4<br></br> 
                     <input type="radio" name="rating" value='4'></input>
                 </label>
-                <label>5<br></br> 
+                <label className='radio-rating-num'>5<br></br> 
                     <input type="radio" name="rating" value='5'></input>
                     <div className='radio-label'>Very Easy</div>
                 </label>
