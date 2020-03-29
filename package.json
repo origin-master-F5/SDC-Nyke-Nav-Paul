@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -w",
     "start": "nodemon server/index.js",
-    "seed": "node database/seed.js"
+    "seed": "node database-final/seed.js"
   },
   "repository": "https://github.com/Team-Blockers/HRLA35-Module4-Server.git",
   "license": "MIT",
