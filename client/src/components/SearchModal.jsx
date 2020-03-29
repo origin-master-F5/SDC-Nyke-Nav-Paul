@@ -82,7 +82,7 @@ export default class SearchModal extends React.Component{
                     <div className='result-display'>
                         <div className='search-results-container'>
                             <div id='top-suggestions'>TOP SUGGESTIONS</div>
-                            <SearchModalProducts products={this.state.products} productCount={this.state.productCount} />
+                            <SearchModalProducts products={this.state.products} productCount={this.state.productCount} handleChange={this.props.handleChange} />
                             <div id='view-all'>View All ({this.state.productCount})</div>
                         </div>
                     </div>

@@ -9,6 +9,7 @@ export default class SearchModalProducts extends React.Component{
     }
 
     handleSelect(product){
+        this.props.handleChange('');
         window.location.hash = product.id;
     }
 
