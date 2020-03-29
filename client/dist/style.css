@@ -861,7 +861,7 @@ select, textarea{
     background-color: rgb(247, 247, 247);
 }
 
-textarea{
+.feedback-textarea{
     height: 50px;
 }
 
