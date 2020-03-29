@@ -551,6 +551,10 @@ h1{
     justify-content: flex-start;
 }
 
+.product-container:hover{
+    cursor: pointer;
+}
+
 .product{
     margin-right: 50px;
     margin-top: 10px;
