@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 const router = express.Router();
-const { find, count } =require('../database/dbhelpers');
+const { find } =require('../database/dbhelpers')
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
