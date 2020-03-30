@@ -169,7 +169,7 @@ function ExperienceSubmission(props){
     return(
     <div className='experience-submission'>
         <div className='feedback-text'>DESCRIBE YOUR EXPERIENCE. WHAT WAS POSITIVE? WHAT CAN WE IMPROVE?</div>
-        <textarea className="feedback-textarea"></textarea>
+        <textarea className='feedback-textarea'></textarea>
         <div className='feedback-text'>WHAT WAS YOUR GOAL FOR YOUR STORE VISIT?</div>
             <select id='topic-dropdown'>
                 <option value='placeholder'>Select a Reason</option>
@@ -190,7 +190,7 @@ function ExperienceSubmission(props){
                 <label className='radio-rating-num'>3<br></br> 
                     <input type="radio" name="rating" value='3'></input>
                 </label>
-                <label className='radio-rating-num'>>4<br></br> 
+                <label className='radio-rating-num'>4<br></br> 
                     <input type="radio" name="rating" value='4'></input>
                 </label>
                 <label className='radio-rating-num'>5<br></br> 
@@ -210,7 +210,7 @@ function DefaultSubmission(props){
     return(
         <div className='default-submission'>
             <div className='feedback-text'>PLEASE SHARE YOUR FEEDBACK.</div>
-            <textarea className="feedback-textarea"></textarea>
+            <textarea className='feedback-textarea'></textarea>
             <div className='assistance-text'>We are unable to respond to requests submitted here.
             If you need assistance with your Nike Product or Services please click here to contact us.</div>
             <input type='button' value='SUBMIT' onClick={props.exitForm}></input>
