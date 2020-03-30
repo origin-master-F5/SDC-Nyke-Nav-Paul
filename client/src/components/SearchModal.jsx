@@ -16,25 +16,37 @@ export default class SearchModal extends React.Component{
 
     getSuggestedCollection(){
         var keyword = this.props.keyword;
-        var collections = ['Men\'s Shoe', 'Women\'s Shoe', 'Kids', 'Running', 'Run', 'Training', 'Train', 'Air', 'Air Max', 'Pegasus', 'Nike', 'Jordan', 'Jordan 3', 'Jordan 3 Retro', 'Adapt', 'Adapt BB', 'Air Force', 'Air Force 1', 'React', 'React Infinity Run', 'Air Zoom', 'Air Max 270', 'Air Huarache', 'Air Huarache Run', 'Air Flight', 'Epic React', 'Epic React Flyknit', 'SB', 'Air Force 1 \'07', 'Air Max 200', 'Air Max 270 React', 'Air Max 90', 'Air VaporMax', 'Jordan 1', 'Free', 'Free X Metcon', 'Metcon', 'Jordan 1 Retro', 'Jordan 1 Retro High', 'Renew', 'Air Zoom Pegasus', 'Air Max 720', '7', 'Zoom', 'Zoom KD12', 'Zoom KD12 Don', 'Blazer', 'Blazer Mid \'77', 'Air Max 95', 'Killshot', 'Killshot 2', 'Air VaporMax Flyknit', 'x Undercover React', 'React Presto', 'Tech Challenge', 'Air Max 1', 'Air Max 1 DNA',  'Air Huarache Run DNA', 'Air Force 1 Low Black History', 'Air Max 95 Black History','Jordan 1 Mid', 'Zoom Pegasus', 'Zoom Pegasus Turbo', 'Air Zoom Pegasus 36', 'Joyride', 'Joyride Dual', 'Jordan 6', 'Air Max Plus', 'Air Force 1 Winter', 'React-Type', 'Freak 1 Soul', 'Air Zoom 85', 'Joyride Run', 'Air Max 270 Special', 'x Undercover Air Max', 'Vaporfly', 'Vaporfly 4%', 'SB Zoom', 'SB Zoom Stefan Janoski', 'Mercurial Vapor', 'Mercurial Vapor 13 Elite', 'SB Zoom Stefan Janoski RM', 'Revolution', 'Drop Type', 'Flex Control', 'Benassi', 'Benassi JDI Fanny', 'Flytrap', 'Air Max Vapor', 'Air Max Vapor Wing', 'Air Max Axis', 'Shox', 'Air Max Motion', 'Air Zoom Vapor', 'Air Force 1 High', 'Free TR', 'Vapor', 'Vapor Untouchable', 'Vapor Untouchable 3', 'Alpha', 'Alpha Huarache', 'Alpha Huarache Elite', 'Alpha Huarache Elite 2', 'Drop-Type', 'Vapor X', 'Vapor X TC', 'Air Ghost', 'Free RN', 'Air Max Alpha', 'Zoom Rize',  'Epic Phantom', 'Epic Phantom React', 'Epic Phantom React A.I.R.', 'Epic Phantom React A.I.R. Cody', 'Air Zoom Vomero', 'Zoom Rival', 'Zoom Rival M', 'Zoom Pegasus Turbo 2', 'Zoom Pegasus Turbo 2 Shield', 'SFB', 'SFB Field', 'SFB Field 2', 'Air Max2']; 
+        var collections = [ 'Men Shoe', 'Women Shoe', 'Running', 'Run', 'Air', 'Free', 'Zoom', 'React', 'Flyknit', 'Vomero', 'RN', 'Jordan', 'Free RN', 'Odyssey', 'Air Zoom', 'React A.I.R', 'React Terra', 'Zoom Vomero', 'React Ianga', 'Jordan React', 'Air Zoom Fly', 'Odyssey React', 'React Element', 'Air Zoom Fly 3', 'Zoom Vomero 14', 'Free RN Motion', 'React HyperSet', 'Air Zoom Freak', 'Air Zoom Vomero', 'React Element 55', 'Air Zoom Pegasus', 'React Terra Globe', 'Air Zoom Vomero 14', 'React HyperSet Rise', 'Odyssey React JoyRide', 'Odyssey React JoyRide CC', 'Air Zoom Pegasus FlyEase', 'Light Redwood', 'Pink Quartz', 'White', 'Dark Grey', 'Pure Platinum', 'Anthracite', 'Bright Crimson', 'Black', 'Pink Blast', 'Dune Red', 'Mahogany', 'Team Orange', 'Burgundy Ash', 'Stone Mauve', 'Barely Rose', 'Smokey Mauve', 'Metallic Red Bronze', 'Volt', 'Gum Light Brown', 'Aura', 'Light Armory Blue', 'Mint Foam', 'Blackened Blue', 'Cosmic Clay', 'Blue Hero', 'Sail', 'Barely Grey', 'Fossil', 'Pistachio Frost', 'Iced Lilac', 'Noble Red', 'Atomic Violet', 'Night Maroon', 'Oil Grey', 'Wolf Grey', 'Cool Grey', 'Metallic Platinum', 'Valerian Blue', 'Vivid Purple', 'Plum Chalk', 'Infinite Gold', 'Silver Lilac', 'Metallic Gold', 'True Berry', 'Vast Grey', 'Phantom', 'Barely Volt', 'Spruce Aura', 'Bio Beige', 'Light Orewood Brown', 'Villain Red', 'Hyper Crimson', 'Pumice', 'Celestial Gold', 'Echo Pink', 'Photon Dust', 'Light Thistle', 'Pollen Rise', 'Magic Flamingo', 'University Blue', 'Half Blue', 'Beechtree', 'Cargo Khaki', 'Off Noir', 'Summit White', 'Laser Fuchsia', 'Psychic Purple', 'Thunder Grey', 'Light Carbon', 'Bright Ceramic', 'Yellow Pulse', 'Ocean Cube', 'Metallic Cool Grey', 'Speed Yellow', 'Team Red', 'Cosmic Fuchsia', 'Limelight', 'Hyper Pink', 'Racer Blue', 'Atmosphere Grey', 'Sky Grey', 'Obsidian Mist', 'Particle Grey', 'Lava Glow', 'Light Bone', 'Laser Crimson', 'Platinum Tint', 'Track Red', 'Light Blue'];
         const regex = new RegExp(keyword, 'i')
         var match = collections.filter((collection) => collection.match(regex));
         if(match.length > 0){
-            var shortenedMatch = match.splice(0, 4);
+            var shortenedMatch = match.splice(0, 6);
             this.setState({
                 suggestions: shortenedMatch,
                 selected: shortenedMatch[0]
             }, () => {
                 axios.get(`/search/${this.state.selected}`)
                 .then((result) => {
-                var shoes = result.data;
-                var shoeCount = result.data.length;
-                var shortenedShoes = shoes.splice(0, 6);
+                    var shoes = result.data;
+                    var shoeCount = result.data.length;
+                    var shortenedShoes = [];
+                    var shoeNames = [];
+        
+                    shoes.forEach((shoe) => {
+                        if(!shoeNames.includes(shoe.item)){
+                            shortenedShoes.push(shoe);
+                            shoeNames.push(shoe.item);
+                        }
+                    })
+        
+                    if(shortenedShoes.length > 6){
+                        shortenedShoes = shortenedShoes.slice(0,6);
+                    }
 
-                this.setState({
-                    products: shortenedShoes,
-                    productCount: shoeCount
-                })
+                    this.setState({
+                        products: shortenedShoes,
+                        productCount: shoeCount
+                    })
 
         })
         .catch((err) => {
@@ -54,7 +66,21 @@ export default class SearchModal extends React.Component{
         .then((result) => {
             var shoes = result.data;
             var shoeCount = result.data.length;
-            var shortenedShoes = shoes.splice(0, 6);
+            var shortenedShoes = [];
+            var shoeNames = [];
+
+            shoes.forEach((shoe) => {
+                if(!shoeNames.includes(shoe.item)){
+                    shortenedShoes.push(shoe);
+                    shoeNames.push(shoe.item);
+
+                }
+            })
+
+            if(shortenedShoes.length > 6){
+                shortenedShoes = shortenedShoes.slice(0, 6);
+            }
+            
 
             this.setState({
                 selected: suggestion,
@@ -82,7 +108,7 @@ export default class SearchModal extends React.Component{
                     <div className='result-display'>
                         <div className='search-results-container'>
                             <div id='top-suggestions'>TOP SUGGESTIONS</div>
-                            <SearchModalProducts products={this.state.products} productCount={this.state.productCount} handleChange={this.props.handleChange} />
+                            <SearchModalProducts products={this.state.products} productCount={this.state.productCount} handleChange={this.props.handleChange}/>
                             <div id='view-all'>View All ({this.state.productCount})</div>
                         </div>
                     </div>
