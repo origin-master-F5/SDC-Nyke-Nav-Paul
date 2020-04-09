@@ -2204,9 +2204,9 @@ var JSONformat = rawData.map((shoe) => (
         price: shoe.discountPrice,
         image: shoe.image,
         collections: shoe.collection,
-        colors: shoe.colorStyles,
+        // colors: shoe.colorStyles,
         id: shoe.nikeID
     }
 ))
-
+//**I dont think having colors will make a difference. The search is used from collections
 module.exports = JSONformat;

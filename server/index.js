@@ -1,17 +1,30 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
 const path = require('path');
 const app = express();
-const router = express.Router();
-const { find } =require('../database-final/dbhelpers')
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/";
 
+app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
 app.use(express.static(path.join(__dirname, '../client/dist')));
-app.use('/', router);
 
 const PORT = 3001;
+let database;
+MongoClient.connect(url, { useUnifiedTopology: true, useNewUrlParser: true }, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db('nike');
+    database = dbo;
+});
+
+app.get('/search/:keyword', (req, res)=>{
+    database.collection('shoes').find({$or:[{collections: {$regex: new RegExp(req.params.keyword, 'i')}},  {type: { $regex: new RegExp(req.params.keyword, 'i') }}] }).limit(50).toArray((err, result)=>{
+        if(err) throw err;
+        res.status(200).send(result)
+    })
+})
 
 app.listen(PORT, (err) => {
     if(err){
@@ -21,34 +34,5 @@ app.listen(PORT, (err) => {
         console.log(`Server is listening on port ${PORT}`);
     }
 })
-
-router.get(`/search/:keyword`, (req, res) => {
-    console.log('Searching!-->', req.params);
-    find(req.params)
-    .then((result) => {
-        console.log('Successful!');
-        res.status(200).send(result);
-    })
-    .catch((err) => {
-        res.status(400).send(err);
-    })
-}) 
-
-router.get(`/count/:keyword`, (req, res) => {
-    console.log('counting!');
-
-    count(req.params)
-    .then((result) => {
-        console.log('Successful!');
-        res.status(200).send(result);
-    })
-    .catch((err) => {
-        res.status(400).send(err);
-    })
-
-})
-
-
-
 
 

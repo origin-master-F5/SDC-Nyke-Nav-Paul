@@ -13,7 +13,7 @@ var shoeSchema = mongoose.Schema({
     price: String,
     image: String,
     collections: [String],
-    colors: [String],
+    // colors: [String],
     id: Number
 });
 

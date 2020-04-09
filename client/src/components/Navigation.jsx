@@ -25,6 +25,7 @@ import Footer from './Footer.jsx';
 import Feedback from './Feedback.jsx';
 import Header from './Header.jsx';
 import ReactDOM from 'react-dom';
+import Axios from 'axios';
 
 
 class Navigation extends React.Component{
@@ -86,7 +87,7 @@ class Navigation extends React.Component{
     }
 }
 
-ReactDOM.render(<Navigation />, document.getElementById('Header'));
+// ReactDOM.render(<Navigation />, document.getElementById('Header'));
 
 export default Navigation;
 
