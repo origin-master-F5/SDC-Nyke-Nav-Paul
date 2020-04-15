@@ -24,7 +24,6 @@ export default class SearchModal extends React.Component{
         if(match.length > 0){
             //shortenedMatch is just a shorter array of the match array
             var shortenedMatch = match.splice(0, 6);
-            // console.log('hola migo: ', shortenedMatch)
             this.setState({
                 suggestions: shortenedMatch,
                 selected: shortenedMatch[0]
@@ -81,7 +80,7 @@ export default class SearchModal extends React.Component{
 
                 }
             })
-            console.log(shortenedShoes)
+            // console.log(shortenedShoes)
 
             if(shortenedShoes.length > 6){
                 shortenedShoes = shortenedShoes.slice(0, 6);
@@ -120,8 +119,8 @@ export default class SearchModal extends React.Component{
                     </div>
                     <div className='match-suggestions'>{/*THIS IS THE RIGHT SEARCH RESULT*/}
                         <div className='search-results-container'>
-                            {this.state.suggestions.map((suggestion) => (
-                                <div className={this.state.selected===suggestion ? 'suggestion-active' : 'suggestion'} onMouseEnter={() => this.handleHover(suggestion)}>{suggestion}</div>
+                            {this.state.suggestions.map((suggestion, index) => (
+                                <div className={this.state.selected===suggestion ? 'suggestion-active' : 'suggestion'} onMouseEnter={() => this.handleHover(suggestion)} key={index}>{suggestion}</div>
                                 ))}
                         </div>
                     </div>

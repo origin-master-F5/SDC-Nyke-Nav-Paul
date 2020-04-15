@@ -7,8 +7,8 @@ export default function Help({display, handleChange}){
     if(display === 'help'){
         return(
             <div id='help-dropdown'>
-                {buttons.map((button) => (
-                    <div className='help-button'> {button} </div>
+                {buttons.map((button, index) => (
+                    <div className='help-button' key={index}> {button} </div>
                 ))}
             </div>
         )

@@ -8,8 +8,8 @@ export default function GuideModal({ display }){
 
         return(
             <ul className='guide-list'>
-                {guides.map((guide) => (
-                    <div className='guide-item'>{guide}
+                {guides.map((guide, index) => (
+                    <div className='guide-item' key={index}>{guide}
                         <div className='empty'></div>
                     </div>
                     

@@ -63,35 +63,35 @@ export default function Mens({ display }){
                 <div className='empty-site-nav'>
                 </div>
                 <div className='left-wing m-w-k'>
-                    {titles.map((title) => (
-                        <div className='bold-title'>
+                    {titles.map((title, index) => (
+                        <div className='bold-title' key={index}>
                             {title}</div>
                     ))}
                 </div>
                 <div className='border-div'> </div>
                 <div className='center-wing m-w-k'>
                     <div className='bold-title'>SHOES</div>
-                    {shoes.map((title) => (
-                        <div className='center-wing-title'>
+                    {shoes.map((title, index) => (
+                        <div className='center-wing-title' key={index}>
                             {title}</div>
                     ))}
                 </div>
                 <div className='center-wing m-w-k'>
                     <div className='bold-title'>CLOTHING</div>
-                    {clothing.map((title) => (
-                        <div className='center-wing-title'>
+                    {clothing.map((title, index) => (
+                        <div className='center-wing-title' key={index}>
                             {title}</div>
                     ))}
                     <div className='bold-title'>ACCESSORIES & EQUIPMENT</div>
-                    {accessories.map((title) => (
-                        <div className='center-wing-title'>
+                    {accessories.map((title, index) => (
+                        <div className='center-wing-title' key={index}>
                             {title}</div>
                     ))}
                 </div>
                 <div className='right-wing m-w-k'>
                     <div className='bold-title'>SHOP COLLECTION</div>
-                    {collections.map((title) => (
-                        <div className='right-wing-title'>
+                    {collections.map((title, index) => (
+                        <div className='right-wing-title' key={index}>
                             {title}</div>
                     ))}
                 </div>

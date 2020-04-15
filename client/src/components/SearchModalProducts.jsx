@@ -17,8 +17,8 @@ export default class SearchModalProducts extends React.Component{
     render(){
         return(
             <div className='product-container'>{/*THIS IS THE LEFT SEARCH RESULT*/}
-                {this.props.products.map((product) => (
-                    <div className='product' onClick={(e) => this.handleSelect(product)}>
+                {this.props.products.map((product, index) => (
+                    <div className='product' onClick={(e) => this.handleSelect(product)} key={index}>
                         <img height='120px' src={product.image} className='product-photo'></img>
                         <div className='product-text'>
                             <div className='product-name'>{product.item}</div>

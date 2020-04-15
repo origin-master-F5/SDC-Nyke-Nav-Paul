@@ -173,8 +173,8 @@ function ExperienceSubmission(props){
         <div className='feedback-text'>WHAT WAS YOUR GOAL FOR YOUR STORE VISIT?</div>
             <select id='topic-dropdown'>
                 <option value='placeholder'>Select a Reason</option>
-                {dropdown.map((item) => (
-                    <option value='placeholder'>{item}</option>
+                {dropdown.map((item, index) => (
+                    <option value='placeholder' key={index}>{item}</option>
                 ))}
             </select>
         <div className='feedback-text'>HOW EASY WAS IT TO ACCOMPLISH THAT GOAL?</div>

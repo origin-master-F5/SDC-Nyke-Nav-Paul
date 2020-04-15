@@ -33,30 +33,30 @@ export default function NewReleases({ display }) {
                 <div className='empty-site-nav'>
                 </div>
                 <div className='left-wing'>
-                    {titles.map((title) => (
-                        <div className='bold-title'>
+                    {titles.map((title, index) => (
+                        <div className='bold-title' key={index}>
                             {title}</div>
                     ))}
                 </div>
                 <div className='border-div'> </div>
                 <div className='center-wing'>
                     <div className='bold-title'>NEW FOR MEN</div>
-                    {men.map((title) => (
-                        <div className='center-wing-title'>
+                    {men.map((title, index) => (
+                        <div className='center-wing-title' key={index}>
                             {title}</div>
                     ))}
                 </div>
                 <div className='center-wing'>
                     <div className='bold-title'>NEW FOR WOMEN</div>
-                    {women.map((title) => (
-                        <div className='center-wing-title'>
+                    {women.map((title, index) => (
+                        <div className='center-wing-title' key={index}>
                             {title}</div>
                     ))}
                 </div>
                 <div className='right-wing'>
                     <div className='bold-title'>NEW FOR KIDS</div>
-                    {kids.map((title) => (
-                        <div className='right-wing-title'>
+                    {kids.map((title, index) => (
+                        <div className='right-wing-title' key={index}>
                             {title}</div>
                     ))}
                 </div>

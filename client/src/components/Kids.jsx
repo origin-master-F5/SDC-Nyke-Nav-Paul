@@ -72,50 +72,50 @@ export default function Kids({ display }){
                 <div className='empty-site-nav'>
                 </div>
                 <div className='left-wing m-w-k'>
-                    {titles.map((title) => (
-                        <div className='bold-title'>
+                    {titles.map((title, index) => (
+                        <div className='bold-title' key={index}>
                             {title}</div>
                     ))}
                 </div>
                 <div className='border-div'> </div>
                 <div className='center-wing m-w-k'>
                     <div className='bold-title'>BOYS SHOES</div>
-                    {boys.map((title) => (
-                        <div className='center-wing-title'>
+                    {boys.map((title, index) => (
+                        <div className='center-wing-title' key={index}>
                             {title}</div>
                     ))}
                     <div className='bold-title'>BOYS CLOTHING</div>
-                    {boysClothing.map((title) => (
-                        <div className='center-wing-title'>
+                    {boysClothing.map((title, index) => (
+                        <div className='center-wing-title' key={index}>
                             {title}</div>
                     ))}
                 </div>
                 <div className='center-wing m-w-k'>
                     <div className='bold-title'>GIRLS SHOES</div>
-                    {girls.map((title) => (
-                        <div className='center-wing-title'>
+                    {girls.map((title, index) => (
+                        <div className='center-wing-title' key={index}>
                             {title}</div>
                     ))}
                     <div className='bold-title'>GIRLS CLOTHING</div>
-                    {girlsClothing.map((title) => (
-                        <div className='center-wing-title'>
+                    {girlsClothing.map((title, index) => (
+                        <div className='center-wing-title' key={index}>
                             {title}</div>
                     ))}
                 </div>
                 <div className='right-wing m-w-k'>
                     <div className='bold-title'>BABY & TODDLER</div>
-                    {toddler.map((title) => (
-                        <div className='right-wing-title'>
+                    {toddler.map((title, index) => (
+                        <div className='right-wing-title' key={index}>
                             {title}</div>
                     ))}
                     <div className='bold-title'>ACCESSORIES & EQUIPMENT</div>
-                    {accessories.map((title) => (
-                        <div className='right-wing-title'>
+                    {accessories.map((title, index) => (
+                        <div className='right-wing-title' key={index}>
                             {title}</div>
                     ))}
                     <div className='bold-title'>SHOP COLLECTION</div>
-                    {collection.map((title) => (
-                        <div className='right-wing-title'>
+                    {collection.map((title, index) => (
+                        <div className='right-wing-title' key={index}>
                             {title}</div>
                     ))}
                 </div>

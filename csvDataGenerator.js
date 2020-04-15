@@ -1,3 +1,4 @@
+//file not needed after deployment
 const faker = require('faker');
 const fs = require('fs');
 
@@ -74,15 +75,19 @@ function writeTenMillionUsers(writer, encoding, callback) {
             // had to stop early!
             // write some more once it drains
             y++
-            writer.once('drain', write);//drain fired because internal buffer was full. once drained, the callback is fired
+            writer.once('drain', write);//drain fired when internal buffer's length is 0. once drained, the callback is fired
         }
     }
     console.log('Please Wait, Writing Data to CSV File...')
     console.time('write time')
     write()
 }
-writeTenMillionUsers(writeUsers, 'utf-8', () => {
-    writeUsers.end();
-    console.timeEnd('write time')
-    console.log('Writing Data to CSV File Complete!!!')
-});
+let didWrite = false;
+if(didWrite === false){
+    writeTenMillionUsers(writeUsers, 'utf-8', () => {
+        writeUsers.end();
+        console.timeEnd('write time')
+        console.log('Writing Data to CSV File Complete!!!')
+    });
+    didWrite = true;
+}

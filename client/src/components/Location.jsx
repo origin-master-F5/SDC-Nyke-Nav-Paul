@@ -71,8 +71,8 @@ export default function Locations({ display, handleClick }){
             <h1>Select your Location</h1><br></br>
             <div className='country-title'><h3>Africa</h3></div>
             <div className='country-container'>
-                {countries.Africa.map((pair) => (
-                    <div className='pair'>
+                {countries.Africa.map((pair, index) => (
+                    <div className='pair' key={index}>
                     <img height="20px" src={pin} className='pin-img'></img>
                     <div className='country-text'>
                         <div className='country-name'>{pair[0]}</div>
@@ -83,8 +83,8 @@ export default function Locations({ display, handleClick }){
             </div>
             <div className='country-title'><h3>Americas</h3></div>
             <div className='country-container'>
-                {countries.Americas.map((pair) => (
-                    <div className='pair'>
+                {countries.Americas.map((pair, index) => (
+                    <div className='pair' key={index}>
                     <img height="20px" src={pin} className='pin-img'></img>
                     <div className='country-text'>
                         <div className='country-name'>{pair[0]}</div>
@@ -95,8 +95,8 @@ export default function Locations({ display, handleClick }){
             </div>
             <div className='country-title'><h3>Asia Pacific</h3></div>
             <div className='country-container'>
-                {countries.AsiaPacific.map((pair) => (
-                    <div className='pair'>
+                {countries.AsiaPacific.map((pair, index) => (
+                    <div className='pair' key={index}>
                         <img height="20px" src={pin} className='pin-img'></img>
                         <div className='country-text'>
                             <div className='country-name'>{pair[0]}</div>
@@ -107,8 +107,8 @@ export default function Locations({ display, handleClick }){
             </div>
             <div className='country-title'><h3>Europe</h3></div>
             <div className='country-container'>
-                {countries.Europe.map((pair) => (
-                    <div className='pair'>
+                {countries.Europe.map((pair, index) => (
+                    <div className='pair' key={index}>
                         <img height="20px" src={pin} className='pin-img'></img>
                         <div className='country-text'>
                             <div className='country-name'>{pair[0]}</div>
@@ -119,8 +119,8 @@ export default function Locations({ display, handleClick }){
             </div>
             <div className='country-title'><h3>Middle East</h3></div>
             <div className='country-container'>
-                {countries.MiddleEast.map((pair) => (
-                    <div className='pair'>
+                {countries.MiddleEast.map((pair, index) => (
+                    <div className='pair' key={index}>
                         <img height="20px" src={pin} className='pin-img'></img>
                         <div className='country-text'>
                             <div className='country-name'>{pair[0]}</div>
